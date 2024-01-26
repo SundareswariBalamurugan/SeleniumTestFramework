@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -21,6 +22,9 @@ public class WebDriverUtil {
 //    This method is used to launch Chrome
     public WebDriver launchChrome(){
        WebDriverManager.chromedriver().setup();
+       ChromeOptions options = new ChromeOptions();
+//       options.addArguments("--incognito");
+//       options.addArguments("--headless");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         return driver;
