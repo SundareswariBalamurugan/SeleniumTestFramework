@@ -1,4 +1,4 @@
-package runner;
+package runnerconfig;
 
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;

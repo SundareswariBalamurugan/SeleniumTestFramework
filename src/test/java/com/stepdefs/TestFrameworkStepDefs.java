@@ -1,4 +1,4 @@
-package stepdefs;
+package com.stepdefs;
 
 import io.cucumber.java.en.Given;
 import pages.TestFrameworkPage;

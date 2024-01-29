@@ -1,9 +1,8 @@
-package stepdefs;
+package com.stepdefs;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.w3c.dom.ls.LSOutput;
 import pages.Homepage;
 
 public class HompageStepDef {

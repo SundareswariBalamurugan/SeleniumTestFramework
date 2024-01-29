@@ -26,8 +26,11 @@ public class TestFrameworkPage {
     }
 
     public void launchUrl(String urlPage) throws WebDriverException {
-
-        driver.get((dataLoadingUtil.fetchConfigValue("url")+urlPage));
+        if(urlPage.isEmpty()) {
+            driver.get((dataLoadingUtil.fetchConfigValue("url") + urlPage));
+        }else {
+            driver.get(urlPage);
+        }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200));
 
     }

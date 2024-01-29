@@ -22,8 +22,8 @@ public class ConfigFileReader {
 
     }
 
-    private static final String CONFIG_PROPS = "src/main/java/configuration/Config.properties";
-    private static final String LOCATOR_PROPS = "src/main/java/configuration/Locators.properties";
+    private static final String CONFIG_PROPS = "src/test/java/configuration/Config.properties";
+    private static final String LOCATOR_PROPS = "src/test/java/configuration/Locators.properties";
 
 
     public static ConfigFileReader getInstance() {
