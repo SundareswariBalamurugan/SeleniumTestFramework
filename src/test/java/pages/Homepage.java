@@ -4,15 +4,13 @@ package pages;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 import org.testng.Assert;
 import utils.DataLoadingUtil;
 import utils.HelperUtil;
 import utils.WebDriverUtil;
-
 import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
+
 
 @Slf4j
 public class Homepage {
@@ -23,12 +21,14 @@ public class Homepage {
     static DataLoadingUtil dataLoadingUtil;
     public HelperUtil helper;
 
+    // Constructor to define the classes
     public Homepage() {
         driver = driverUtil.getDriver();
         helper =  new HelperUtil(driver);
         dataLoadingUtil = new DataLoadingUtil();
     }
 
+    // Defining the locators
     public static final String USERNAME_FIELD = "userName";
     public static final String PASSWORD_FIELD = "password";
     public static final String LOGIN_BUTTON = "login";
@@ -61,6 +61,7 @@ public class Homepage {
     String optionProvided ;
     String appUrl ;
 
+    // Assigning the locators to corresponding By variables
   static By userName = By.id(USERNAME_FIELD);
   static By password = By.id(PASSWORD_FIELD);
   static By login = By.id(LOGIN_BUTTON);
@@ -90,7 +91,7 @@ public class Homepage {
 
 
 
-
+    // Launches the site in defined browser
     public void launchUrl(String urlPage) throws WebDriverException {
 
         driver.get((dataLoadingUtil.fetchConfigValue("url")+urlPage));
@@ -98,6 +99,7 @@ public class Homepage {
 
     }
 
+    // this is to provide login details
     public void provideLoginDetails(String userName_val, String password_Val){
            helper.waitForVisibilityOfElement(userName);
         try {
