@@ -33,8 +33,6 @@
     <jdk.source.version>17.0.2</jdk.source.version>
     <jdk.target.version>17.0.2</jdk.target.version>
 
-    <!--TestNG version -->
-    <testng.version>6.14.2</testng.version>
 
     <!--Logger version -->
     <logger.version>2.20.0</logger.version>
@@ -72,12 +70,6 @@
       <version>${logger.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>${cucumber-testng.version}</version>
-    </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>

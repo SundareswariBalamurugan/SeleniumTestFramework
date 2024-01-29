@@ -2,9 +2,9 @@ package pages;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import utils.DataLoadingUtil;
 import utils.HelperUtil;
 import utils.WebDriverUtil;
