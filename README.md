@@ -16,5 +16,8 @@ _Steps to run this Framework_
 * Use TestRunner written in cucumber - jUnit to run your specific test
 * Or use "mvn clean instal" or "mvn test" to run the script from terminal
 
+_Steps in progress_
+* adding to pipeline(git actions) 
+
 
 
