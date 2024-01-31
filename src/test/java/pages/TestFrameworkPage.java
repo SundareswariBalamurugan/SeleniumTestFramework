@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class TestFrameworkPage {
 
-    private static final WebDriverUtil driverUtil =new WebDriverUtil();
+
 
     static WebDriver driver;
     static DataLoadingUtil dataLoadingUtil;
@@ -20,8 +20,8 @@ public class TestFrameworkPage {
     public static final String USERNAME_FIELD = "userName";
     static By userName = By.id(USERNAME_FIELD);
     public TestFrameworkPage() {
-        driver = driverUtil.getDriver();
-        helper =  new HelperUtil(driver);
+        driver = WebDriverUtil.getDriver();
+        helper =  new HelperUtil();
         dataLoadingUtil = new DataLoadingUtil();
     }
 

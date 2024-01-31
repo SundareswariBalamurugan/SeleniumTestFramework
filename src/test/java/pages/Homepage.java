@@ -15,7 +15,7 @@ import java.util.*;
 @Slf4j
 public class Homepage {
 
-    private static final WebDriverUtil driverUtil =new WebDriverUtil();
+
 
     static WebDriver driver;
     static DataLoadingUtil dataLoadingUtil;
@@ -23,8 +23,7 @@ public class Homepage {
 
     // Constructor to define the classes
     public Homepage() {
-        driver = driverUtil.getDriver();
-        helper =  new HelperUtil(driver);
+        helper =  new HelperUtil();
         dataLoadingUtil = new DataLoadingUtil();
     }
 
@@ -32,6 +31,8 @@ public class Homepage {
     public static final String USERNAME_FIELD = "userName";
     public static final String PASSWORD_FIELD = "password";
     public static final String LOGIN_BUTTON = "login";
+    public static final String COOKIE_BANNER = "//p[contains(text(),'Consent')][contains(text(),'Consent')]";
+
     public static final String AFTERLOGINPAGE = "//div[@class='pattern-backgound playgound-header']/div";
     public static final String FULLNAME_FIELD = "#userName";
     public static final String email_FIELD = "#userEmail";
@@ -83,6 +84,7 @@ public class Homepage {
   static By permAddress = By.cssSelector(permanentAddress_FIELD);
   static By submit = By.xpath(submit_BUTTON);
   static By expand = By.xpath(expand_BUTTON);
+  static By accepCookie = By.xpath(COOKIE_BANNER);
   static By selectedOption = By.xpath(SELECTED_OPTION);
   static By homeLink = By.linkText(HOMELINK);
   static By createdLink = By.linkText(CREATEDLINK);
@@ -94,7 +96,18 @@ public class Homepage {
     // Launches the site in defined browser
     public void launchUrl(String urlPage) throws WebDriverException {
 
+        driver = WebDriverUtil.getInstance();
         driver.get((dataLoadingUtil.fetchConfigValue("url")+urlPage));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200));
+        try {
+            if(!driver.findElement(accepCookie).isDisplayed()) {
+
+            }else{
+                helper.click(accepCookie);
+            }
+        }catch (ElementNotInteractableException e){
+           throw e;
+        }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200));
 
     }

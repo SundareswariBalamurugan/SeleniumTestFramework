@@ -18,8 +18,8 @@ public class HelperUtil{
 
     WebDriver driver ;
 
-    public HelperUtil(WebDriver driver) {
-        this.driver = driver;
+    public HelperUtil() {
+        driver =  WebDriverUtil.getInstance();;
     }
 
     /**
