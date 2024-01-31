@@ -17,7 +17,7 @@ _Steps to run this Framework_
 * Or use "mvn clean instal" or "mvn test" to run the script from terminal
 
 _Steps in progress_
-* adding to pipeline(git actions) 
+* adding to pipeline(Git actions) 
 
 
 
