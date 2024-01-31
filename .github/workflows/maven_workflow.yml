@@ -23,4 +23,4 @@ jobs:
         run: chmod +x mvnw
 
       - name: Build and test with Maven
-        run: ./mvnw -x clean install
+        run: ./mvnw -X clean install
