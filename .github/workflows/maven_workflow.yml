@@ -19,5 +19,8 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
       - name: Build and test with Maven
-        run: mvn -x clean install
+        run: ./mvnw -x clean install
