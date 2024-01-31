@@ -12,15 +12,22 @@ import org.openqa.selenium.safari.SafariDriver;
 public class WebDriverUtil {
     @Setter
     @Getter
-    WebDriver driver;
+    private static WebDriver driver;
 //    String driver_option = "Chrome";
 
-    public WebDriverUtil() {
-        setDriver(launchChrome());
+
+    private WebDriverUtil() {
     }
 
-//    This method is used to launch Chrome
-    public WebDriver launchChrome(){
+    public static WebDriver getInstance(){
+        if(driver==null){
+            setDriver(launchChrome());
+        }
+        return driver;
+    }
+
+    //    This method is used to launch Chrome
+    public static WebDriver launchChrome(){
        WebDriverManager.chromedriver().setup();
        ChromeOptions options = new ChromeOptions();
 //       options.addArguments("--incognito");
@@ -37,6 +44,8 @@ public class WebDriverUtil {
         driver.manage().window().maximize();
         return driver;
     }
+
+
 
 
 }

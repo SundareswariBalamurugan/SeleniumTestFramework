@@ -8,7 +8,7 @@ Scenario Outline: Validate whether user can login to the book store  application
   Examples:
     |Username  | Password|
     |"Susie"    |"Test@123" |
-    |"Susie"    | "Test@123" |
+
 
 
  @TestForm
