@@ -22,7 +22,7 @@
 
     <!-- Selenium version -->
     <selenium.version>4.16.1</selenium.version>
-    <webdriverManager.version>5.6.1</webdriverManager.version>
+    <webdriverManager.version>5.6.3</webdriverManager.version>
 
     <!-- Lombok version -->
 

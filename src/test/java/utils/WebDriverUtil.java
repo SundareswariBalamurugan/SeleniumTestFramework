@@ -21,7 +21,7 @@ public class WebDriverUtil {
 
     public static WebDriver getInstance(){
         if(driver==null){
-            setDriver(launchChrome());
+            setDriver(launchFirefox());
         }
         return driver;
     }
@@ -41,6 +41,14 @@ public class WebDriverUtil {
     public WebDriver launchSafari(){
         WebDriverManager.safaridriver().setup();
         driver = new SafariDriver();
+        driver.manage().window().maximize();
+        return driver;
+    }
+
+    //    This method is used to launch Safari
+    public static WebDriver launchFirefox(){
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         return driver;
     }
